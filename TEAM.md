@@ -27,10 +27,10 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Nguyen Duc Trung - 2A202603423 | workflow + integration | cf903c4 | tests/test_public_matrix.py::test_public_single_run_cases |
-| Thành viên 2 | single agent | cf903c4 | tests/test_trace_contract.py::test_valid_trace_passes |
-| Thành viên 3 | orchestrator + handoff | cf903c4 | tests/test_handoff_secret.py::test_handoff_drops_secrets |
-| Thành viên 4 | ledger + evaluation | cf903c4 | tests/test_crash_suite.py::test_crash_suite_20 |
+| Nguyen Duc Trung - 2A202603423 | workflow + integration | a0a3ad1 | tests/test_public_matrix.py::test_public_single_run_cases |
+| Thành viên 2 | single agent | a0a3ad1 | tests/test_trace_contract.py::test_valid_trace_passes |
+| Thành viên 3 | orchestrator + handoff | a0a3ad1 | tests/test_handoff_secret.py::test_handoff_drops_secrets |
+| Thành viên 4 | ledger + evaluation | a0a3ad1 | tests/test_crash_suite.py::test_crash_suite_20 |
 
 ## Cá nhân
 
