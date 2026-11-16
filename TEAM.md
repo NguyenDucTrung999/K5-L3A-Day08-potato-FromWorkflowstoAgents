@@ -27,10 +27,10 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Thành viên 1 | workflow + integration | 1144830 | tests/test_public_matrix.py::test_public_single_run_cases |
-| Thành viên 2 | single agent | 1144830 | tests/test_trace_contract.py::test_valid_trace_passes |
-| Thành viên 3 | orchestrator + handoff | 1144830 | tests/test_handoff_secret.py::test_handoff_drops_secrets |
-| Nguyen Duc Trung - 2A202603423 | ledger + evaluation | 1144830 | tests/test_crash_suite.py::test_crash_suite_20 |
+| Thành viên 1 | workflow + integration | 2d91c3f | tests/test_public_matrix.py::test_public_single_run_cases |
+| Thành viên 2 | single agent | 2d91c3f | tests/test_trace_contract.py::test_valid_trace_passes |
+| Thành viên 3 | orchestrator + handoff | 2d91c3f | tests/test_handoff_secret.py::test_handoff_drops_secrets |
+| Nguyen Duc Trung - 2A202603423 | ledger + evaluation | 2d91c3f | tests/test_crash_suite.py::test_crash_suite_20 |
 
 ## Cá nhân
 
