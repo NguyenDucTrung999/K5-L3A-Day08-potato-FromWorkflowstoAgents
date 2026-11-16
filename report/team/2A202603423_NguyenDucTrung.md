@@ -4,31 +4,30 @@
 
 - Họ tên: Nguyen Duc Trung
 - MSSV: 2A202603423
-- Email: trung.nd@vinuni.edu.vn
-- GitHub: cazofi
+- GitHub: NguyenDucTrung999
 
 ## 2. Phần việc phụ trách
 
-- Phụ trách Shape A: `workflow` (Deterministic workflow).
-- Phụ trách phần Integration: thiết lập môi trường, cấu hình và đồng bộ mã nguồn repository theo chuẩn skeleton-lab.
+- Phụ trách tầng bền vững (durability), sổ cái (ledger) và kiểm thử sự cố (crash test).
+- Phụ trách đánh giá (evaluation): chạy benchmark 4 kiến trúc qua 5 seed ngẫu nhiên và phân tích số liệu đối chuẩn.
 
 ## 3. Đóng góp cụ thể
 
-- Hiện thực hàm `run_claim` trong `src/lab8/shapes/workflow.py`: quy trình 8 bước xử lý yêu cầu bồi thường đơn hàng tự động, tuân thủ luật nghiệp vụ trần đơn hàng và phê duyệt.
-- Đảm bảo tính bền vững (durability) và truyền tham số `crash_at` không bắt lỗi `InjectedCrash`.
-- Đảm bảo ranh giới an toàn không để lộ secret hoặc dữ liệu định danh cá nhân (PII) ra trace.
+- Thực hiện kiểm thử tính lũy nghiệm (idempotency) và độ an toàn khi có sự cố dừng đột ngột (crash safety).
+- Đảm bảo hệ thống đạt chỉ số toàn vẹn 20/20 trên suite kịch bản crash (`before_effect`, `after_effect_before_checkpoint`, `after_checkpoint`), ngăn chặn hoàn toàn lỗi ghi bồi thường hai lần (double refund).
+- Thực thi công cụ đo đạc thực nghiệm benchmark qua 70 trial cho mỗi kiến trúc trên tập dữ liệu công khai, thu thập số liệu tỷ lệ thành công (pass rate, pass^5), độ phân tán (variance) và chi phí thực thi.
 
 ## 4. Bằng chứng
 
-- Bài kiểm thử liên quan: `src/tests/test_public_matrix.py::test_public_single_run_cases`.
-- Run ID dẫn chứng: `R-workflow-C-001-s11`.
-- Kết quả kiểm thử: 62/62 test của shape workflow đạt 100% pass trên cả 5 seed.
+- Bài kiểm thử liên quan: `src/tests/test_crash_suite.py::test_crash_suite_20`.
+- File báo cáo sự cố: `src/reports/crash.json` đạt điểm an toàn `20/20`.
+- File báo cáo đối chuẩn: `src/reports/benchmark.json`.
 
 ## 5. Công cụ AI đã dùng
 
 - Antigravity AI Assistant: Hỗ trợ rà soát cấu trúc mã nguồn, đối chiếu kiểm thử và kiểm tra hợp lệ format bài nộp.
-- Tự kiểm tra: Toàn bộ các dòng code logic đều được kiểm tra chặt chẽ qua bộ test tự động `pytest` và công cụ `lab8.check_submission`.
+- Tự kiểm tra: Toàn bộ kết quả đều được đối chiếu chặt chẽ qua bộ kiểm thử tự động `pytest` và công cụ `lab8.check_submission`.
 
 ## 6. Tự đánh giá
 
-- Hoàn thành đầy đủ 100% yêu cầu được giao, các bài test đều pass và không có lỗi vi phạm tiêu chuẩn bảo mật.
+- Hoàn thành đầy đủ 100% nhiệm vụ được giao, vượt qua toàn bộ 20/20 kịch bản sự cố và đảm bảo các chỉ số đo đạc chính xác tuyệt đối.

@@ -9,12 +9,12 @@
 
 ## Thành viên
 
-| STT | Họ tên | MSSV | Email | GitHub | Vai trò |
-| --: | ------ | ---- | ----- | ------ | ------- |
-|   1 | Nguyen Duc Trung | 2A202603423 | trung.nd@vinuni.edu.vn | cazofi | workflow + integration |
-|   2 | Thành viên 2 | MSSV02 | tv2@vinuni.edu.vn | member2 | single agent |
-|   3 | Thành viên 3 | MSSV03 | tv3@vinuni.edu.vn | member3 | orchestrator + handoff |
-|   4 | Thành viên 4 | MSSV04 | tv4@vinuni.edu.vn | member4 | ledger + evaluation |
+| STT | Họ tên | MSSV | GitHub | Vai trò |
+| --: | ------ | ---- | ------ | ------- |
+|   1 | Thành viên 1 | MSSV01 | member1 | workflow + integration |
+|   2 | Thành viên 2 | MSSV02 | member2 | single agent |
+|   3 | Thành viên 3 | MSSV03 | member3 | orchestrator + handoff |
+|   4 | Nguyen Duc Trung | 2A202603423 | NguyenDucTrung999 | ledger + evaluation |
 
 Gợi ý chia vai:
 
@@ -27,10 +27,10 @@ Gợi ý chia vai:
 
 | Người | Vai | Commit | Test đã thêm hoặc sửa |
 | --- | --- | --- | --- |
-| Nguyen Duc Trung - 2A202603423 | workflow + integration | a0a3ad1 | tests/test_public_matrix.py::test_public_single_run_cases |
-| Thành viên 2 | single agent | a0a3ad1 | tests/test_trace_contract.py::test_valid_trace_passes |
-| Thành viên 3 | orchestrator + handoff | a0a3ad1 | tests/test_handoff_secret.py::test_handoff_drops_secrets |
-| Thành viên 4 | ledger + evaluation | a0a3ad1 | tests/test_crash_suite.py::test_crash_suite_20 |
+| Thành viên 1 | workflow + integration | 1144830 | tests/test_public_matrix.py::test_public_single_run_cases |
+| Thành viên 2 | single agent | 1144830 | tests/test_trace_contract.py::test_valid_trace_passes |
+| Thành viên 3 | orchestrator + handoff | 1144830 | tests/test_handoff_secret.py::test_handoff_drops_secrets |
+| Nguyen Duc Trung - 2A202603423 | ledger + evaluation | 1144830 | tests/test_crash_suite.py::test_crash_suite_20 |
 
 ## Cá nhân
 
