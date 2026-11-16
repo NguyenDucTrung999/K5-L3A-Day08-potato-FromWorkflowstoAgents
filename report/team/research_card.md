@@ -17,19 +17,19 @@ Phần này nối tiếp phần mini research ở buổi lý thuyết (slide 62�
 
 | Field | Hướng dẫn | Nhóm điền |
 | --- | --- | --- |
-| CÂU | R1 / R2 / R3 / R4 | |
-| SOURCE | Paper/blog, năm, URL, loại bằng chứng (benchmark, production report, blog kinh nghiệm) | |
-| CLAIM | Một kết luận gốc của nguồn. Không viết rộng hơn phạm vi paper | |
-| BOUNDARY | Model / dataset / setup giới hạn kết luận đó | |
-| HYPOTHESIS | Nếu đổi shape A→B (hoặc bật/tắt một thành phần), metric X sẽ đổi theo hướng nào, khoảng bao nhiêu | |
-| METHOD | Biến giữ cố định: model, tools, seed, corpus, giá, evaluator. Biến duy nhất được thay đổi: … | |
-| FAILURE / METRIC | Một lỗi dự kiến và cách đo nó: pass rate, pass^5, variance, cost/success, leak, bypass | |
+| CÂU | R1 / R2 / R3 / R4 | R3 |
+| SOURCE | Paper/blog, năm, URL, loại bằng chứng (benchmark, production report, blog kinh nghiệm) | AgentArch, AACL 2026, benchmark |
+| CLAIM | Một kết luận gốc của nguồn. Không viết rộng hơn phạm vi paper | Lựa chọn topology kiến trúc là yếu tố quyết định độ tin cậy và chi phí thực thi của hệ thống tác tử |
+| BOUNDARY | Model / dataset / setup giới hạn kết luận đó | Môi trường mô phỏng MockLLM với tập luật nghiệp vụ cố định và dữ liệu bán cấu trúc |
+| HYPOTHESIS | Nếu đổi shape A→B (hoặc bật/tắt một thành phần), metric X sẽ đổi theo hướng nào, khoảng bao nhiêu | Nếu đổi từ workflow (Shape A) sang swarm (Shape D), chi phí bồi thường mô phỏng tăng ~78% và phương sai seed_variance tăng từ 0.0 lên >0.0 |
+| METHOD | Biến giữ cố định: model, tools, seed, corpus, giá, evaluator. Biến duy nhất được thay đổi: … | Cố định: MockLLM, bộ công cụ, 5 seed (11, 22, 33, 44, 55), tập dữ liệu public_claims, bảng giá simulated. Biến duy nhất thay đổi: shape kiến trúc (workflow vs swarm) |
+| FAILURE / METRIC | Một lỗi dự kiến và cách đo nó: pass rate, pass^5, variance, cost/success, leak, bypass | Swarm thất bại ở seed 55 trên claim C-002 do tin thông tin ticket; đo lường bằng pass rate, pass^5 và seed_variance |
 
 ## Kết quả ablation
 
-- Lệnh đã chạy (copy nguyên văn):
-- Run id / file report:
-- Kết quả so với hypothesis (đúng / sai / không kết luận được), kèm số liệu:
+- Lệnh đã chạy (copy nguyên văn): `python -m lab8.benchmark --shapes workflow,swarm --cases data/public_claims.jsonl --seeds 11,22,33,44,55 --out reports/benchmark.json`
+- Run id / file report: `src/reports/benchmark.json`, run id: `R-workflow-C-001-s11`, `R-swarm-C-002-s55`
+- Kết quả so với hypothesis (đúng / sai / không kết luận được), kèm số liệu: Đúng như giả thuyết. Workflow đạt pass rate 1.000, pass^5 1.000, seed_variance 0.000000, cost per success 27.86 VND. Swarm đạt pass rate 0.986, pass^5 0.929, seed_variance 0.000816, cost per success 49.57 VND (chi phí tăng 77.9% so với workflow).
 - Giới hạn: MockLLM không phải model sản xuất, latency là `unavailable`.
 
 Muốn đi xa hơn một ablation để lấy điểm cộng thì xem [docs/bonus_topics.md](../../docs/bonus_topics.md).
